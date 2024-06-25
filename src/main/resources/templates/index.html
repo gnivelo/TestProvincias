@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/app.js"></script>
+</head>
+<body>
+
+<h1>Lista de provincias</h1>
+    <label for="provincia">Provincia:</label>
+    <select id="provincia" name="provincia">
+        <option value="">Seleccione una provincia</option>
+        <option th:each="provincia : ${lstProvincias}" th:value="${provincia.idProvincia}" th:text="${provincia.nombreProvincia}"></option>
+    </select>
+
+    <label for="canton">Cantón:</label>
+    <select id="canton" name="canton" disabled>
+        <option value="">Seleccione una cantón</option>
+    </select>
+
+    <label for="parroquia">Parroquia:</label>
+    <select id="parroquia" name="parroquia" disabled>
+        <option value="">Seleccione una parroquia</option>
+    </select>
+</body>
+</html>
